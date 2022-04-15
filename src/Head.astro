@@ -40,8 +40,8 @@ const coverUrl = site + '/assets/img' + path + '/cover.png';
 <meta property="twitter:image" content={coverUrl} />
 
 <!-- Analytics -->
-{analytics && analytics.provider = 'fathom' && analytics.site && <Fathom site={analytics.site}>}
-{analytics && analytics.provider = 'google' && analytics.id && <GoogleAnalytics id={analytics.id}>}
-{analytics && analytics.provider = 'metrical' && analytics.app && <Metrical app={analytics.app}>}
-{analytics && analytics.provider = 'plausible' && analytics.domain && <Plausible domain={analytics.domain}>}
-{analytics && analytics.provider = 'simple' && SimpleAnalytics site={analytics.site}>}
+{analytics && analytics.provider && analytics.provider === 'fathom' && analytics.site && <Fathom site={analytics.site} />}
+{analytics && analytics.provider && analytics.provider === 'google' && analytics.id && <GoogleAnalytics id={analytics.id} />}
+{analytics && analytics.provider && analytics.provider === 'metrical' && analytics.app && <Metrical app={analytics.app} />}
+{analytics && analytics.provider && analytics.provider === 'plausible' && analytics.domain && <Plausible domain={analytics.domain} />}
+{analytics && analytics.provider && analytics.provider === 'simple' && analytics.site && <SimpleAnalytics site={analytics.site} />}
