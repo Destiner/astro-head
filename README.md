@@ -19,7 +19,7 @@ npm i astro-head
 
 ## Usage
 
-Inside your Astro pages, add this to your `<head>`:
+Inside your Astro pages, add this:
 
 ```astro
 ---
