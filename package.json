@@ -1,6 +1,6 @@
 {
   "name": "astro-head",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Batteries-included Astro component for your <head>",
   "type": "module",
   "exports": "./src/index.js",
