@@ -1,7 +1,7 @@
 {
-  "name": "astro-analytics",
-  "version": "2.1.1",
-  "description": "Analytics components for Astro",
+  "name": "astro-head",
+  "version": "1.0.0",
+  "description": "Batteries-included Astro component for your <head>",
   "type": "module",
   "exports": "./src/index.js",
   "author": "Timur Badretdinov <destinerx@gmail.com>",
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/Destiner/astro-analytics.git"
+    "url": "git://github.com/Destiner/astro-head.git"
   },
   "license": "MIT",
   "dependencies": {
