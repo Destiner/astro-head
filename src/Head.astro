@@ -1,0 +1,47 @@
+---
+import { Fathom, GoogleAnalytics, Metrical, Plausible, SimpleAnalytics } from 'astro-analytics';
+
+const { title, description = '', analytics } = Astro.props;
+
+const site = Astro.canonicalURL.origin;
+const canonicalUrl = Astro.canonicalURL.href;
+const url = new URL(Astro.request.url);
+const path = url.pathname;
+const coverUrl = site + '/assets/img' + path + '/cover.png';
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+{description && <meta name="description" content={description} />}
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="mask-icon" href="/favicon.svg" color="#de904d" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+{description && <meta property="og:description" content={description} />}
+<meta property="og:image" content={coverUrl} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalUrl} />
+<meta property="twitter:title" content={title} />
+{description && <meta property="twitter:description" content={description} />}
+<meta property="twitter:image" content={coverUrl} />
+
+<!-- Analytics -->
+{analytics && analytics.provider = 'fathom' && analytics.site && <Fathom site={analytics.site}>}
+{analytics && analytics.provider = 'google' && analytics.id && <GoogleAnalytics id={analytics.id}>}
+{analytics && analytics.provider = 'metrical' && analytics.app && <Metrical app={analytics.app}>}
+{analytics && analytics.provider = 'plausible' && analytics.domain && <Plausible domain={analytics.domain}>}
+{analytics && analytics.provider = 'simple' && SimpleAnalytics site={analytics.site}>}
